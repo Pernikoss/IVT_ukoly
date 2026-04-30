@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+</head>
+<body>
+	Ahoj, dnes je {{ date }}.
+	<hr>
+	{% if name %}
+		<strong>{{ name }}, rád tě vidím!</strong><hr>
+	{% endif %}
+
+	Řekni mi své jméno a já tě pozdravím!
+	<form method="GET">
+		<input type="text" name="name" placeholder="Zadej své jméno">
+		<button type="submit">Pozdrav mě!</button>
+	</form>
+
+</body>
+</html>
