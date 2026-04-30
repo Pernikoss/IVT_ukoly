@@ -8,12 +8,13 @@
 	Ahoj, dnes je {{ date }}.
 	<hr>
 	{% if name %}
-		<strong>{{ name }}, rád tě vidím!</strong><hr>
+		<strong>{{ name }} {{ surname }}, rád tě vidím!</strong><hr>
 	{% endif %}
 
 	Řekni mi své jméno a já tě pozdravím!
 	<form method="GET">
 		<input type="text" name="name" placeholder="Zadej své jméno">
+		<input type="text" name="surname" placeholder="Zadej své příjmení">
 		<button type="submit">Pozdrav mě!</button>
 	</form>
 
