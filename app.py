@@ -9,8 +9,10 @@ def index():
 	date = datetime.now().strftime("%d. %m. %Y")
 
 	name=request.args.get("name")
+	surname=request.args.get("surname")
 
-	return render_template("page.html", date=date, name=name)
+
+	return render_template("page.html", date=date, name=name, surname=surname)
 
 if __name__=="__main__":
 	app.run(debug=True)
