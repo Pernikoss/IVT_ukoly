@@ -29,13 +29,18 @@ def pozdrav_post():
 	chyba = None
 
 	if request.method == "POST":
-		name=request.form.get("name")
-		surname=request.form.get("surname")
-		password=request.form.get("password")
-		if password == "tajneheslo":
+		name = request.form.get("name")
+		surname = request.form.get("surname")
+		password = request.form.get("password")
+
+		if not name:
+			chyba = "Jméno nesmí být prázdné!"
+		elif len(name) > 50:
+			chyba = "Jméno je příliš dlouhé (max. 50 znaků)!"
+		elif password == "tajneheslo":
 			tajna_zprava = "Tajné heslo je správné, krejzy!"
 		elif password:
-			chyba = "Tajné heslo je nesprávné!"	
+			chyba = "Tajné heslo je nesprávné!"
 
 	return render_template("pozdrav_post.html", date=date, name=name, surname=surname, tajna_zprava=tajna_zprava, chyba=chyba)
 
