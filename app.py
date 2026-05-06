@@ -1,9 +1,5 @@
 from flask import Flask, render_template, request
-<<<<<<< HEAD
 from datetime import date, datetime
-=======
-from datetime import datetime
->>>>>>> e065bfb78aba73c66a504613ba2f7ef77303eda1
 
 app = Flask(__name__)
 
@@ -27,7 +23,6 @@ def pozdrav_post():
 	#aktuální datum
 	date = datetime.now().strftime("%d. %m. %Y")
 
-<<<<<<< HEAD
 	name = None
 	surname = None
 	tajna_zprava = None
@@ -43,13 +38,6 @@ def pozdrav_post():
 			chyba = "Tajné heslo je nesprávné!"	
 
 	return render_template("pozdrav_post.html", date=date, name=name, surname=surname, tajna_zprava=tajna_zprava, chyba=chyba)
-=======
-	name=request.form.get("name")
-	surname=request.form.get("surname")
-
-
-	return render_template("pozdrav_post.html", date=date, name=name, surname=surname)
->>>>>>> e065bfb78aba73c66a504613ba2f7ef77303eda1
 
 if __name__=="__main__":
 	app.run(debug=True)
